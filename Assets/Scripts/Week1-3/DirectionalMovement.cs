@@ -3,6 +3,7 @@ using UnityEngine;
 public class DirectionalMovement : MonoBehaviour
 {
     public float Speed = 3;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
