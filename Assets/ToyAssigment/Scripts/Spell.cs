@@ -12,7 +12,6 @@ public class Spell : MonoBehaviour
     public bool dontSpawnRandomly;
     public bool canBounce;
     float bounceTimer;
-    float directionBounce = 1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,7 +40,7 @@ public class Spell : MonoBehaviour
 
         if(BottomStart)
         {
-            transform.position = new Vector2(0, bottomLeft.y) + Random.insideUnitCircle * 8;
+            transform.position = new Vector2(0 + Random.Range(-7f, 7f), bottomLeft.y + Random.Range(2f, 4f));
         }
     }
 

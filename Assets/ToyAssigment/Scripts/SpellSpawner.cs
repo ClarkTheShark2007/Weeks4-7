@@ -5,6 +5,8 @@ public class SpellSpawner : MonoBehaviour
     public GameObject FireSpell;
     public GameObject IceSpell;
     public GameObject ThunderstormSpell;
+    public GameObject EarthSpell;
+    public GameObject GhastSpell;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,16 +34,18 @@ public class SpellSpawner : MonoBehaviour
         }
         else if(spellID == 3)
         {
-            Debug.Log("Ice Spell Casted");
+            Debug.Log("Thunder Spell Casted");
             Instantiate(ThunderstormSpell);
         }
         else if(spellID == 4)
         {
-            
+            Debug.Log("Earth Spell Casted");
+            Instantiate(EarthSpell);
         }
         else if(spellID == 5)
         {
-            
+            Debug.Log("Ghast Spell Casted");
+            Instantiate(GhastSpell);
         }
         else if(spellID == 6)
         {
