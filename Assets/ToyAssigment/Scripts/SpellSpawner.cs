@@ -3,7 +3,8 @@ using UnityEngine;
 public class SpellSpawner : MonoBehaviour
 {
     public GameObject FireSpell;
-    
+    public GameObject IceSpell;
+    public GameObject ThunderstormSpell;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,11 +27,13 @@ public class SpellSpawner : MonoBehaviour
         }
         else if (spellID == 2)
         {
-            
+            Debug.Log("Ice Spell Casted");
+            Instantiate(IceSpell);
         }
         else if(spellID == 3)
         {
-            
+            Debug.Log("Ice Spell Casted");
+            Instantiate(ThunderstormSpell);
         }
         else if(spellID == 4)
         {
