@@ -3,10 +3,12 @@ using UnityEngine.UI;
 
 public class SpellTimer : MonoBehaviour
 {
-    public float timerValue = 0;
+    float timerValue = 0;
     float timerMaxValue = 10;
     public Slider timerSlider;
-    public AudioSource spellFailed;
+    public SpellSpawner spellSpawner;
+    public int spellID;
+    AudioSource spellFailed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +35,7 @@ public class SpellTimer : MonoBehaviour
             spellFailed.Play();
         } else
         {
+            spellSpawner.CastSpell(spellID);
             timerValue = 0;
             timerSlider.value = timerValue;
         }

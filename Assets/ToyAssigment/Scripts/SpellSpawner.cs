@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SpellSpawner : MonoBehaviour
 {
+    public GameObject FireSpell;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +22,7 @@ public class SpellSpawner : MonoBehaviour
         if (spellID == 1)
         {
             Debug.Log("Fire Spell Casted");
+            Instantiate(FireSpell);
         }
         else if (spellID == 2)
         {
