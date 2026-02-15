@@ -17,6 +17,7 @@ public class SpellSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Creates a win effect if 5 spells are currently casted
         castText.text = totalSpellsCasted.ToString();
 
         if(totalSpellsCasted >= 5)
@@ -30,6 +31,7 @@ public class SpellSpawner : MonoBehaviour
 
     public void CastSpell(int spellID)
     {
+        //When called, a takes in an Int, int determines what prefab is instanitate
         if (spellID == 1)
         {
             Debug.Log("Fire Spell Casted");

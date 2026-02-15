@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class SpellGhast : MonoBehaviour
 {
+    //Script used specifcally for the Ghast prefab object instead of requluar spell script
     Vector2 bottomLeft;
     Vector2 topRight;
     float ghastSpeed;
@@ -15,7 +16,6 @@ public class SpellGhast : MonoBehaviour
     public GameObject ghastHPBar;
 
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -24,8 +24,10 @@ public class SpellGhast : MonoBehaviour
         bottomLeft = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
         topRight = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
 
+        //Spawns at the right of the screen with a random Y
         transform.position = new Vector2(topRight.x + 3, Random.Range(-3f, 3));
 
+        //Ghast health and speed are randomizied (No set value via inspector)
         ghastSpeed = Random.Range(1f, 6f);
         ghastHealth = Random.Range(1, 5);
     }
@@ -39,8 +41,10 @@ public class SpellGhast : MonoBehaviour
 
     void ghastEnemy()
     {
+        //Updates text with the current health value
         healthValue.text = ghastHealth.ToString();
 
+        //Checks if the mouse is in the sprite bounds and if the player clicks if so, bring the ghast health down by 1 and play an audio
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         if (Mouse.current.leftButton.wasPressedThisFrame && sr.bounds.Contains(mousePos) == true)
@@ -57,6 +61,8 @@ public class SpellGhast : MonoBehaviour
 
     void ghastMovement()
     {
+        //Simple movement, bounces from right to left. If at the edge, flips the scale of X to corresponding direction
+
         Vector2 newPos = transform.position;
         newPos.x -= ghastSpeed * Time.deltaTime;
 

@@ -386,7 +386,6 @@ GameObject:
   m_Component:
   - component: {fileID: 311022329}
   - component: {fileID: 311022330}
-  - component: {fileID: 311022331}
   m_Layer: 5
   m_Name: BackgroundSlider
   m_TagString: Untagged
@@ -479,19 +478,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &311022331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311022328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d68fccb23fa22340b875b2a8601942c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundslider: {fileID: 311022330}
 --- !u!224 &401727113 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1175194669726621867, guid: f12d14dd40e9eeb4c86e5d45b8e9992e, type: 3}
@@ -518,6 +504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 425637586}
   - component: {fileID: 425637585}
+  - component: {fileID: 425637587}
   m_Layer: 0
   m_Name: Wizard Hat
   m_TagString: Untagged
@@ -595,6 +582,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.593}
+--- !u!114 &425637587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425637584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8815c21f875e240946f5b6a24a64fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &436203557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1132,7 +1131,7 @@ GameObject:
   - component: {fileID: 594762484}
   - component: {fileID: 594762485}
   m_Layer: 5
-  m_Name: SizeSlider
+  m_Name: ColourSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1204,16 +1203,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 2109365384}
   m_HandleRect: {fileID: 1983004482}
   m_Direction: 0
-  m_MinValue: 0.22
-  m_MaxValue: 0.44
-  m_WholeNumbers: 0
-  m_Value: 0.22
+  m_MinValue: 0
+  m_MaxValue: 3
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1186918854}
-        m_TargetAssemblyTypeName: Backgrounds, Assembly-CSharp
-        m_MethodName: sliderChange
+      - m_Target: {fileID: 425637587}
+        m_TargetAssemblyTypeName: Hat, Assembly-CSharp
+        m_MethodName: SetColour
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

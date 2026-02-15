@@ -8,18 +8,18 @@ public class Hat : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    public void SetScale(float scale)
+    public void SetColour(float Colour) //Slider determines a float, depending on current float change the colour of the wizard hat
     {
-        if(scale == 0)
+        if(Colour == 0)
         {
             spriteRenderer.color = Color.white;
-        } else if (scale == 1)
+        } else if (Colour == 1)
         {
             spriteRenderer.color = Color.red;
-        } else if (scale == 2)
+        } else if (Colour == 2)
         {
             spriteRenderer.color = Color.yellow;
-        } else if (scale == 3)
+        } else if (Colour == 3)
         {
             spriteRenderer.color = Color.black;
         } 

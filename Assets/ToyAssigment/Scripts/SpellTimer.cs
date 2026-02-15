@@ -20,6 +20,7 @@ public class SpellTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Simple timer, slider visuales what current value the time value is
         timerValue += Time.deltaTime;
         timerSlider.value = timerValue;
         if(timerValue > timerMaxValue)
@@ -30,6 +31,7 @@ public class SpellTimer : MonoBehaviour
 
     public void SpellPressed()
     {
+        //When pressed, if the timer is not at a max value, play the failed audio. Else reset timer and call spell spawn function with spell ID
         if(timerValue < timerMaxValue)
         {
             spellFailed.Play();
